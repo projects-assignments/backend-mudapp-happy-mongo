@@ -1,0 +1,142 @@
+[
+    {
+        "service_id": "65b2311e5dcefa5108fcdf7c",
+        "driver_id": "65b2311ed3746bf0d045cbbe",
+        "client_id": "65b2311ebdf876562503e511",
+        "fee": "€:617",
+        "inicialAddress": "River Street 647",
+        "finalAddress": "Garland Court 917 ",
+        "date": "2022-01-22",
+        "passengers": 8,
+        "serviceExtras": [
+            "Nro assistents: 3",
+            "Nro wheelbarrow: 2"
+        ],
+        "serviceStatus": [
+            "Confirmed: true",
+            "In Process: false",
+            "Cancelled: true",
+            "Finalized: true"
+        ]
+    },
+    {
+        "service_id": "65b2311ee795f441658848ba",
+        "driver_id": "65b2311e24a18c8148668800",
+        "client_id": "65b2311e7c41df461ed9adda",
+        "fee": "€:732",
+        "inicialAddress": "Willow Street 593",
+        "finalAddress": "Etna Street 690 ",
+        "date": "2023-04-21",
+        "passengers": 3,
+        "serviceExtras": [
+            "Nro assistents: 1",
+            "Nro wheelbarrow: 6"
+        ],
+        "serviceStatus": [
+            "Confirmed: false",
+            "In Process: true",
+            "Cancelled: true",
+            "Finalized: false"
+        ]
+    },
+    {
+        "service_id": "65b2311e49a889bc9e79df73",
+        "driver_id": "65b2311e1af47ed7c46c0429",
+        "client_id": "65b2311e12c9c8547c0982ff",
+        "fee": "€:793",
+        "inicialAddress": "Llama Court 377",
+        "finalAddress": "Livingston Street 971 ",
+        "date": "2020-03-10",
+        "passengers": 6,
+        "serviceExtras": [
+            "Nro assistents: 5",
+            "Nro wheelbarrow: 7"
+        ],
+        "serviceStatus": [
+            "Confirmed: true",
+            "In Process: false",
+            "Cancelled: false",
+            "Finalized: true"
+        ]
+    },
+    {
+        "service_id": "65b2311e1419144b4864c991",
+        "driver_id": "65b2311ec63ee072127db69b",
+        "client_id": "65b2311e3f4e90ef2f62e83b",
+        "fee": "€:174",
+        "inicialAddress": "Dobbin Street 990",
+        "finalAddress": "Pilling Street 573 ",
+        "date": "2021-12-28",
+        "passengers": 10,
+        "serviceExtras": [
+            "Nro assistents: 2",
+            "Nro wheelbarrow: 6"
+        ],
+        "serviceStatus": [
+            "Confirmed: false",
+            "In Process: false",
+            "Cancelled: true",
+            "Finalized: true"
+        ]
+    },
+    {
+        "service_id": "65b2311e617b8956fa229d5f",
+        "driver_id": "65b2311e4be9e30423c63bbe",
+        "client_id": "65b2311e0591eb88adfc25c2",
+        "fee": "€:342",
+        "inicialAddress": "Brighton Court 815",
+        "finalAddress": "Keen Court 575 ",
+        "date": "2019-05-29",
+        "passengers": 4,
+        "serviceExtras": [
+            "Nro assistents: 9",
+            "Nro wheelbarrow: 9"
+        ],
+        "serviceStatus": [
+            "Confirmed: true",
+            "In Process: true",
+            "Cancelled: false",
+            "Finalized: false"
+        ]
+    },
+    {
+        "service_id": "65b2311e5c6bc329f677302d",
+        "driver_id": "65b2311e990970e2466c0a6a",
+        "client_id": "65b2311e859160a7f77cba4d",
+        "fee": "€:247",
+        "inicialAddress": "Utica Avenue 955",
+        "finalAddress": "Ridgecrest Terrace 862 ",
+        "date": "2017-10-08",
+        "passengers": 1,
+        "serviceExtras": [
+            "Nro assistents: 5",
+            "Nro wheelbarrow: 4"
+        ],
+        "serviceStatus": [
+            "Confirmed: false",
+            "In Process: true",
+            "Cancelled: false",
+            "Finalized: true"
+        ]
+    },
+    {
+        "service_id": "65b2311eaca2977f157fee9d",
+        "driver_id": "65b2311ec90002e50939bf83",
+        "client_id": "65b2311ea0901bc4f9ac7e5d",
+        "fee": "€:312",
+        "inicialAddress": "Gem Street 199",
+        "finalAddress": "Cadman Plaza 268 ",
+        "date": "2019-02-18",
+        "passengers": 4,
+        "serviceExtras": [
+            "Nro assistents: 5",
+            "Nro wheelbarrow: 6"
+        ],
+        "serviceStatus": [
+            "Confirmed: true",
+            "In Process: true",
+            "Cancelled: false",
+            "Finalized: false"
+        ]
+    }
+]
