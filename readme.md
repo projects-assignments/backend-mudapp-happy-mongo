@@ -1,127 +1,73 @@
-![](https://imgur.com/MiDuWQ5.png)
-# MUDApp: : La app de las mudanzas. Paso 2 Diseño y Desarrollo del backend (APIRest)
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
 
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-## Introducción
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-Una start-up de nueva creación ha solicitado una aplicación para dinamizar el mundo de las mudanzas y del transporte de paquetería en general.
+## Description
 
-La aplicación tiene cierta semejanza con la aplicación de UBER y, su objetivo principal es poner en contacto a personas con necesidades de transporte de bienes con transportistas que tengan un vehículo de las características adecuadas a esas necesidades.
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-Enhorabuena equipo, habéis empezado a desarrollar nuestra aplicación web y estamos bastante satisfechos del trabajo realizado con la base de datos. Ahora nos gustaría que abordaseis la parte del backend de nuestra aplicación.
+## Installation
 
-Hemos seguido analizando los requerimientos que queremos tener en nuestra aplicación y os los detallamos a continuación:
+```bash
+$ pnpm install
+```
 
-## Requerimientos funcionales
+## Running the app
 
-<details>
-  <summary><b>Usuaria-Cliente (en adelante Cliente) no registrada</b></summary>
+```bash
+# development
+$ pnpm run start
 
-  - Puede registrarse
-  - Puede realizar búsquedas por condiciones: Localidad, Destino, nº paquetes, tamaño máximo del paquete, fecha del transporte.
+# watch mode
+$ pnpm run start:dev
 
-  </details>
-  <details>
-  <summary><b>Cliente registrada</b></summary>
+# production mode
+$ pnpm run start:prod
+```
 
-  - Puede logarse
-  - Puede recuperar la contraseña
-  - Puede realizar búsquedas por condiciones: Localidad, Destino, nº paquetes, tamaño máximo del paquete, fecha del transporte.
-  - Puede actualizar su perfil de usuaria (menos nombre, email)
-  - Puede seleccionar un transportista de una lista
-  - Puede contratar el servicio de un transportista
-  - Puede pagar el servicio
-  - Puede cancelar un servicio si todavía no lo ha pagado
-  - Puede ver el detalle del servicio contratado
-  - Puede valorar el servicio realizado
-  - Puede comentar el servicio realizado (sólo 1 vez)
-  - Puede enviar un mensaje a un transportista contratado.
-  - Puede visualizar mensajes de un transportista contratado
+## Test
 
-  </details>
-<details>
-  <summary><b>Usuaria-Proveedor de transporte (en adelante Transportista) no registrada</b></summary>
+```bash
+# unit tests
+$ pnpm run test
 
-  - Puede registrarse
+# e2e tests
+$ pnpm run test:e2e
 
-  </details>
-  <details>
-  <summary><b>Transportista registrada</b></summary>
+# test coverage
+$ pnpm run test:cov
+```
 
-  - Puede logarse
-  - Puede recuperar la contraseña
-  - Puede dar de alta un vehículo
-  - Puede modificar los datos de un vehículo
-  - Puede eliminar los datos de un vehículo
-  - Puede actualizar su perfil de usuaria (menos nombre, email). Puede cambiar su estado a NO DISPONIBLE.
-  - Puede ver el detalle del servicio contratado
-  - Puede enviar un mensaje a un cliente.
-  - Puede visualizar mensajes de un cliente.
-  - Pueden ver la lista de condiciones del servicio.
+## Support
 
-  </details>
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-  <details>
-  <summary><b>Administradora de la aplicación</b></summary>
+## Stay in touch
 
-  - Puede visualizar la lista de clientes y transportistas
-  - Puede realizar búsquedas por palabras claves.
-  - Puede editar la lista de condiciones del servicio de transporte.
-  - Puede editar o borrar un cliente
-  - Puede editar o borrar un transportista
-  - Puede editar o borrar un servicio
-  - Notifica a los transportistas valorados que van a recibir un pago.
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
 
+## License
 
-  </details>
-
-  <details>
-  <summary><b>Sistema</b></summary>
-
-  - Filtra la lista de transportistas por el check de disponibilidad
-  - Modifica la disponibilidad de un transportista cuando se ha recibido el pago de un servicio.
-  - Modifica la disponibilidad de un transportista cuando se ha finalizado un servicio.
-  - Modifica la disponibilidad e un transportista si se ha cancelado un servicio.
-  - Notifica al cliente que tiene que valorar un servicio cuando se ha realizado.
-  - Ajusta la valoración del transportista con cada valoración de un cliente.
-
-  </details>
-
-## Requerimientos Técnicos
-
-  - Incluir Linting
-  - Incluir testing unitario y testing de integración de todos los endpoints
-  - Incluir documentación con OpenAPI ([Swagger](https://swagger.io/tools/open-source/getting-started/))
-  - Desplegar en producción
-
-BONUS-TRACK
-  - Dockerizar API y BBDD
-  - Desplegar mediante CI/CD con GitHub Actions
-
-## Modalidad Pedagógica
-  - Proyecto grupal
-  - Desarrollo en 2 sprints, 1 semana de duración cada uno
-  - Fecha de presentación: 5/2/2023
-
-## Evaluación
-  - Vía pull-request a través de Github-classromm
-  - Comentarios orales día de la presentación
-  - Autoevaluación
-
-## Entregables
-- Repositorio de GitHub que contenga la siguiente información:
-  - Readme con índice,contenido del repositorio, las tecnologías utilizadas, links a los recursos.
-  - Modelo lógico de la base de datos.
-  - Fichero de dump de la base de datos.
-  - Instrucciones de instalación de la aplicación
-  - Presentación
-
-## Criterios de rendimiento
-  |  | 1 | 2 | 3 |
-| --- | --- | --- | --- |
-| Indicador | Deficiente | Regular | Excelente |
-| Trabajo en equipo | Ha habido problemas de comunicación, alguno de los miembros del equipo no ha participado en el desarrollo y/o no conoce el funcionamiento de la API. | Se ha trabajado de forma modular, pero no se ha trabajado de forma equitativa en cuanto a cantidad y complejidad del trabajo. Ha habido algún problema de comunicación | Se dividió la carga de trabajo por igual, los dos han contribuido al desarrollo del trabajo y conocen por igual todos los detalles del proyecto |
-| Documentación de la API | La documentación es incorrecta, omite servicios o estos no se corresponden con la implementación, no hay descripción de historias de usuario | La documentación es completa o faltan pocas especificaciones. Falta claridad en la descripción. Faltan historias de usuario y a las que hay les falta información | La documentación es clara y corresponde perfectamente a los servicios. Cuenta con descripciones detalladas y es intuitiva. Se describen las historias de usuario con tareas y criterios de aceptación asociados. |
-| Testing | El porcentaje de cobertura de los tests no supera el 50% | El % de cobertura es inferior al 80% | El % de cobertura es superior al 80% |
-| Implementación de la API | Hay requerimientos que no se resolvieron o su solución es incorrecta. El código es confuso y carece de buenas prácticas. Falta el desarrollo de muchos servicios o éstos son incorrectos. Las consultas a la bbdd son muy ineficientes, lo cual aumenta el tiempo de respuesta. El comportamiento de los endpoints no es el esperado. | Se resuelven satisfactoriamente los requerimientos especificados, pero el código podría mejorarse con buenas prácticas o limpieza. Sobra código o es redundante. | El código es limpio y está bien estructurado. Resuelve satisfactoriamente los requerimientos del proyecto. Se aplicaron buenas prácticas de programación: responsabilidad única, no es redundante y no mezcla capas de abstracción. Las conexiones a la bbbdd son eficientes. |
-| Comunicación del Proyecto | No quedan claros la motivación ni los requerimientos del proyecto. No es posible conocer la evolución del proyecto. La presentación es incompleta y carece de hilo conductor. No refleja para nada el trabajo realizado | Existe cierta calidad en la presentación aunque faltan apartados o estos no están claramente definidos. Existe cierto grado de confusión pero refleja el desarrollo | Las presentaciones están bien preparadas, se ajustan a los apartados requeridos y reflejan correctamente la evolución del proyecto. |
+Nest is [MIT licensed](LICENSE).
