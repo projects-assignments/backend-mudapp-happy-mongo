@@ -1,0 +1,135 @@
+[
+    {
+        "user_id": "65b24016a80b15318d276e86",
+        "role": [
+            "Admin: true",
+            "Client: false",
+            "Driver: false"
+        ],
+        "firstName": "Nicole",
+        "surName": "Dale",
+        "address": [
+            "Street: Pineapple Street",
+            "Number: 888",
+            "City: id Lorem",
+            "zipCode: 11061"
+        ],
+        "dni": 65211225,
+        "email": "nicoledale@combogen.com",
+        "password": "65b24016dc7fed47b0272b1a"
+    },
+    {
+        "user_id": "65b24016be65084f581ccd20",
+        "role": [
+            "Admin: true",
+            "Client: true",
+            "Driver: true"
+        ],
+        "firstName": "Clarice",
+        "surName": "Zamora",
+        "address": [
+            "Street: Clarendon Road",
+            "Number: 766",
+            "City: laboris elit",
+            "zipCode: 15041"
+        ],
+        "dni": 62508305,
+        "email": "claricezamora@combogen.com",
+        "password": "65b240165fab733917c57d2b"
+    },
+    {
+        "user_id": "65b240166cad5d8d2b23c2b2",
+        "role": [
+            "Admin: true",
+            "Client: false",
+            "Driver: true"
+        ],
+        "firstName": "Benjamin",
+        "surName": "Dillon",
+        "address": [
+            "Street: Hubbard Street",
+            "Number: 255",
+            "City: do enim",
+            "zipCode: 85352"
+        ],
+        "dni": 90337711,
+        "email": "benjamindillon@combogen.com",
+        "password": "65b240160a6d925dfbcf5c91"
+    },
+    {
+        "user_id": "65b24016d81ed7db6d46603c",
+        "role": [
+            "Admin: false",
+            "Client: false",
+            "Driver: true"
+        ],
+        "firstName": "Moreno",
+        "surName": "Washington",
+        "address": [
+            "Street: Oxford Street",
+            "Number: 925",
+            "City: irure sit",
+            "zipCode: 25104"
+        ],
+        "dni": 10708927,
+        "email": "morenowashington@combogen.com",
+        "password": "65b2401623ef504a9ec9adc1"
+    },
+    {
+        "user_id": "65b24016c7ec1840d71e7b1c",
+        "role": [
+            "Admin: true",
+            "Client: true",
+            "Driver: false"
+        ],
+        "firstName": "Salinas",
+        "surName": "Foster",
+        "address": [
+            "Street: Humboldt Street",
+            "Number: 818",
+            "City: nostrud id",
+            "zipCode: 75637"
+        ],
+        "dni": 91809994,
+        "email": "salinasfoster@combogen.com",
+        "password": "65b240167660c8efa2f8f602"
+    },
+    {
+        "user_id": "65b24016cd37c57110cd16a4",
+        "role": [
+            "Admin: true",
+            "Client: true",
+            "Driver: false"
+        ],
+        "firstName": "Dunlap",
+        "surName": "Long",
+        "address": [
+            "Street: Agate Court",
+            "Number: 602",
+            "City: labore consectetur",
+            "zipCode: 83710"
+        ],
+        "dni": 46136077,
+        "email": "dunlaplong@combogen.com",
+        "password": "65b24016d47a5f16072b4a5c"
+    },
+    {
+        "user_id": "65b24016173bce93eb4d0603",
+        "role": [
+            "Admin: true",
+            "Client: true",
+            "Driver: false"
+        ],
+        "firstName": "June",
+        "surName": "Keller",
+        "address": [
+            "Street: Remsen Street",
+            "Number: 585",
+            "City: duis id",
+            "zipCode: 96742"
+        ],
+        "dni": 46057643,
+        "email": "junekeller@combogen.com",
+        "password": "65b24016f173e24a51cabe49"
+    }
+]
