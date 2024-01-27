@@ -9,8 +9,8 @@ import { MessagesModule } from './messages/messages.module';
 import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
-  imports: [ChargeModule, DriverModule, ServiceModule, RatingModule, MessagesModule, MongooseModule.forRoot('mongodb:mongodb+srv://correofrg:felix@book-api.nbz0kit.mongodb.net/')],
+  imports: [ChargeModule, DriverModule, ServiceModule, RatingModule, MessagesModule, MongooseModule.forRoot('mongodb+srv://correofrg:felix@book-api.nbz0kit.mongodb.net/')],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
