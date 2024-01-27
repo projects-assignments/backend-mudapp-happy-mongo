@@ -17,7 +17,7 @@ driverAvailable: boolean;
 @Prop ()
 vehicle: [{truck:boolean, capacity: string}, {van:boolean, capacity: string}, {car:boolean, capacity: string}]
 @Prop ()
-zones: [Barcelona:string]
+zones: [Barcelona:boolean]
 @Prop ()
 fees: [truck:boolean, van:boolean, car:boolean, xtras: {assistant: number, wheelbarrow: number}]
 @Prop ()
