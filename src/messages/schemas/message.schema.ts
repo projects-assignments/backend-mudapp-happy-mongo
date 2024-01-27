@@ -7,23 +7,14 @@ export class Message {
 @Prop ({unique:true, required:true})
 messageId: string;
 @Prop ({required:true})
-messageName: string;
+userId: string;
 @Prop ({required:true})
-messageLastName: string;
+driverId: string;
 @Prop ({required:true})
-messageEmail: string;
-@Prop ()
-messageAvailable: boolean;
-@Prop ()
-vehicle: [{truck:boolean, capacity: string}, {van:boolean, capacity: string}, {car:boolean, capacity: string}]
-@Prop ()
-zones: [Barcelona:string]
-@Prop ()
-fees: [truck:boolean, van:boolean, car:boolean, xtras: {assistant: number, wheelbarrow: number}]
-@Prop ()
-collectMethods: {cardHolder: string, IBAN: string} 
-@Prop ()
-averageRating: number;
+date: {
+    type: Date,
+    default: Date.now
+}
 }
 
 
