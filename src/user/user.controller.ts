@@ -10,7 +10,7 @@ import { log } from 'console';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Post()
+  @Post('/create')
   async createUser(@Res()response, @Body() createUserDto: CreateUserDto) {
     const userCreated = await this.userService.createUser(createUserDto);
     console.log (createUserDto)

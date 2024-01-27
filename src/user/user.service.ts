@@ -8,8 +8,10 @@ import { User } from './schemas/user.schema';
 @Injectable()
 export class UserService {
   constructor (@InjectModel('User') private readonly userModel: Model<User>){} 
-  createUser(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+
+ async createUser(createUserDto: CreateUserDto):Promise <User> {
+  const userCreated = new this.userModel(createUserDto)  
+    return await userCreated.save();
   }
 
   findAll() {
