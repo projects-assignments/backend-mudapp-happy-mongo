@@ -1,19 +1,19 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
 
-export type DriverDocument = HydratedDocument<Driver>;
+export type MessageDocument = HydratedDocument<Message>;
 @Schema()
-export class Driver {
+export class Message {
 @Prop ({unique:true, required:true})
-driverId: string;
+messageId: string;
 @Prop ({required:true})
-driverName: string;
+messageName: string;
 @Prop ({required:true})
-driverLastName: string;
+messageLastName: string;
 @Prop ({required:true})
-driverEmail: string;
+messageEmail: string;
 @Prop ()
-driverAvailable: boolean;
+messageAvailable: boolean;
 @Prop ()
 vehicle: [{truck:boolean, capacity: string}, {van:boolean, capacity: string}, {car:boolean, capacity: string}]
 @Prop ()
@@ -27,4 +27,4 @@ averageRating: number;
 }
 
 
-export const DriverSchema = SchemaFactory.createForClass(Driver);
+export const MessageSchema = SchemaFactory.createForClass(Message);

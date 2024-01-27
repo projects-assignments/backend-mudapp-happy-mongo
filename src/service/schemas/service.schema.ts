@@ -7,7 +7,7 @@ export class Service {
 @Prop ({unique:true, required:true})
 serviceId: string;
 @Prop ({unique:true, required:true})
-clientId: string;
+userId: string;
 @Prop ({unique:true, required:true})
 driverId: string;
 @Prop ({required:true})

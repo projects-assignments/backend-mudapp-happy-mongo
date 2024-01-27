@@ -18,6 +18,9 @@ address: {street: string, streetNumber: number, city: string, postalCode: number
 userEmail: string;
 @Prop ()
 dni: string;
+@Prop ({required:true})
+userPassword: string;
 }
+
 
 export const UserSchema = SchemaFactory.createForClass(User);
