@@ -4,22 +4,30 @@ import mongoose, { Date, HydratedDocument } from 'mongoose';
 export type UserDocument = HydratedDocument<User>;
 @Schema()
 export class User {
-@Prop ({unique:true, required:true})
-userId: string;
-@Prop ({required:true})
-role: string;
-@Prop ({required:true})
-userName: string;
-@Prop ({required:true})
-userLastName: string;
-@Prop ({required:true})
-address: {street: string, streetNumber: number, city: string, postalCode: number}
-@Prop ({required:true})
-userEmail: string;
-@Prop ()
-dni: string;
-@Prop ({required:true})
-userPassword: string;
+    @Prop({ unique: true, required: true })
+    userId: string;
+    @Prop({ default: false, required: true })
+    role: {
+        admin: boolean,
+        user: boolean,
+        driver: boolean
+    };
+    // @Prop({ required: true })  posible solución mas minimalista
+    // role: {
+    //     driver: boolean
+    // }
+    @Prop({ required: true })
+    userName: string;
+    @Prop({ required: true })
+    userLastName: string;
+    @Prop({ required: true })
+    address: { street: string, streetNumber: number, city: string, postalCode: number }
+    @Prop({ required: true })
+    userEmail: string;
+    @Prop()
+    dni: string;
+    @Prop({ required: true })
+    userPassword: string;
 }
 
 

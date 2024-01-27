@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import  { HydratedDocument } from 'mongoose';
+import { HydratedDocument } from 'mongoose';
 
 export type RatingDocument = HydratedDocument<Rating>;
 @Schema()
@@ -10,11 +10,11 @@ export class Rating {
     userId: string;
     @Prop({ required: true })
     driverId: string;
-    @Prop({ required: true })
-    Rating: {
-        Rate:number,
+    @Prop({ type: Date, default: Date.now, required: true })
+    rating: {
+        rate: number,
         date: Date;
-        message:string,
+        message: string,
     };
 };
 

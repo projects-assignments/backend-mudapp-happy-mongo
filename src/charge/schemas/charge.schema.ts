@@ -6,7 +6,7 @@ export type ChargeDocument = HydratedDocument<Charge>;
 export class Charge {
     @Prop({ unique: true, required: true })
     userId: string;
-    @Prop()
+    @Prop({ type: Date, default: Date.now })
     chargeMethods: { cardHolder: string, cardNumber: number, expirationDate: Date, CVN: string }
 }
 

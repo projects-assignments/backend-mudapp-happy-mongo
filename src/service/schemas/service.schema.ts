@@ -16,7 +16,7 @@ export class Service {
     pickupAddress: string;
     @Prop({ required: true })
     deliveryAddress: string;
-    @Prop({ required: true })
+    @Prop({ type: Date, default: Date.now, required: true })
     date: Date;
     @Prop({ required: true })
     passengers: number;
@@ -25,19 +25,17 @@ export class Service {
         assistant: number,
         wheelbarrow: number
     }
-    @Prop()
+    @Prop({ default: false })
     paymentStatus: {
-        approved: boolean,
         standBy: boolean,
         cancelled: boolean
     }
-    @Prop({ required: true })
+    @Prop({ default: false, required: true })
     statusServie: {
         confirmed: boolean,
         inProgress: boolean,
         cancelled: boolean,
         finalized: boolean,
-
     }
 }
 
