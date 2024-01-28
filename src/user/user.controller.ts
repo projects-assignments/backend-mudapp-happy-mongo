@@ -39,9 +39,12 @@ export class UserController {
   // }
 
 
-  @Get()
-  findAll() {
-    return this.userService.findAll();
+  @Get('/')
+  findAllUsers(@Res()response) {
+   const allUsers = this.userService.findAll();
+   response.status(HttpStatus.OK).json({
+    allUsers
+   })
   }
 
   @Get(':id')
@@ -58,7 +61,7 @@ export class UserController {
   async deleteUser(@Res() response, @Query('userId') userId) {
     const userDeleted = await this.userService.deleteUser(userId);
     if(!userDeleted) throw new NotFoundException('The user does not exists');
-    return response.status(HttpStatus.OK).JSON({
+    return response.status(HttpStatus.OK).json({
       message:'The user has been deleted succesfully',
       userDeleted
     })
