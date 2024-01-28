@@ -29,8 +29,8 @@ export class UserService {
     return `This action updates a #${id} user`;
   }
 
-  async deleteUser(userId: string):Promise<User> {
-    const deletedUser = await this.userModel.findByIdAndDelete(userId);
+  async deleteUser(id: string):Promise<User> {
+    const deletedUser = await this.userModel.findByIdAndDelete(id);
     return deletedUser;
   }
 }

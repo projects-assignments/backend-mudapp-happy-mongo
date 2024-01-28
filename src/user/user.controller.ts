@@ -59,9 +59,10 @@ export class UserController {
     return this.userService.update(+id, updateUserDto);
   }
 
-  @Delete('/delete')
-  async deleteUser(@Res() response, @Query('userId') userId) {
-    const userDeleted = await this.userService.deleteUser(userId);
+  @Delete(':id')
+  async deleteUser(@Res() response, @Param('id') id: string) {
+    const userDeleted = await this.userService.deleteUser(id);
+    console.log(id)
     if(!userDeleted) throw new NotFoundException('The user does not exists');
     return response.status(HttpStatus.OK).json({
       message:'The user has been deleted succesfully',
