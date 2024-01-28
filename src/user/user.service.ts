@@ -16,6 +16,7 @@ export class UserService {
 
   async findAll():Promise<User[]> {
     const allUsers = await this.userModel.find();
+    console.log(allUsers);
     return allUsers;
   }
 
@@ -27,8 +28,8 @@ export class UserService {
     return `This action updates a #${id} user`;
   }
 
-  async deleteUser(userId: string):Promise<User> {
-    const deletedUser = await this.userModel.findByIdAndDelete(userId);
+  async deleteUser(id: string):Promise<User> {
+    const deletedUser = await this.userModel.findByIdAndDelete(id);
     return deletedUser;
   }
 }
