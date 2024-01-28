@@ -54,10 +54,14 @@ export class UserController {
     return this.userService.findOneUser(id);
   }
 
-  // @Patch(':id')
-  // update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-  //   return this.userService.update(+id, updateUserDto);
-  // }
+  @Patch(':id')
+  async updatePartiallyUser(@Res()response,@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
+    const updatePartiallyUser = await this.userService.updatePartiallyUser(id,updateUserDto)
+    return response.status(HttpStatus.OK).json({
+      message:'The user has been update succesfully',
+      updatePartiallyUser
+    })
+  }
 
   @Delete(':id')
   async deleteUser(@Res() response, @Param('id') id: string) {
@@ -69,7 +73,7 @@ export class UserController {
       userDeleted
     })
   }
-
+  // http://localhost:5000/user/update?id=65b62e96ac3ecb16fcb58346//Esta es la forma para poner el parametro id en la Query Http... Si ponemos la ruta update en  decorador Pur "@Put('/update')" hay que usar el decorador @Query('id').
   @Put('/update')
   async updateUser(@Res() response, @Body()createUserDto: CreateUserDto, @Query('id') id: string){
     const updatedUser = await this.userService.updateUser(id,createUserDto);

@@ -20,9 +20,14 @@ export class UserService {
     return allUsers;
   }
 
- async findOneUser(id: string): Promise<User> {
+  async findOneUser(id: string): Promise<User> {
   const findUser = await this.userModel.findById(id)  
   return findUser;
+  }
+
+  async updatePartiallyUser(id: string, updatedUserDto: UpdateUserDto):Promise<User> {
+    const updatedPartiallyUser = await this.userModel.findByIdAndUpdate(id, updatedUserDto);
+    return updatedPartiallyUser;
   }
 
   async updateUser(id: string, createUserDto: CreateUserDto):Promise<User> {
