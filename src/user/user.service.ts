@@ -21,12 +21,13 @@ export class UserService {
   }
 
  async findOneUser(id: string): Promise<User> {
-  const foundUser = await this.userModel.findById(id)  
-  return foundUser;
+  const findUser = await this.userModel.findById(id)  
+  return findUser;
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async updateUser(id: string, createUserDto: CreateUserDto):Promise<User> {
+    const updatedUser = await this.userModel.findByIdAndUpdate(id, createUserDto);
+    return updatedUser;
   }
 
   async deleteUser(id: string):Promise<User> {

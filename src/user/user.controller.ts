@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Res, HttpStatus, Query, NotFoundException } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Res, HttpStatus, Query, NotFoundException, Put } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -54,19 +54,29 @@ export class UserController {
     return this.userService.findOneUser(id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return this.userService.update(+id, updateUserDto);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
+  //   return this.userService.update(+id, updateUserDto);
+  // }
 
   @Delete(':id')
   async deleteUser(@Res() response, @Param('id') id: string) {
     const userDeleted = await this.userService.deleteUser(id);
     console.log(id)
-    if(!userDeleted) throw new NotFoundException('The user does not exists');
+    if(!userDeleted) throw new NotFoundException('The user does not exist');
     return response.status(HttpStatus.OK).json({
       message:'The user has been deleted succesfully',
       userDeleted
     })
   }
+
+  @Put('/update')
+  async updateUser(@Res() response, @Body()createUserDto: CreateUserDto, @Query('id') id: string){
+    const updatedUser = await this.userService.updateUser(id,createUserDto);
+    if(!updatedUser) throw new NotFoundException('The user does not exist');
+    return response.status(HttpStatus.OK).json({
+      message: 'User Updated Succesfully',
+      updatedUser
+    })
+}
 }
