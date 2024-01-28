@@ -16,11 +16,13 @@ export class UserService {
 
   async findAll():Promise<User[]> {
     const allUsers = await this.userModel.find();
+    console.log(allUsers);
     return allUsers;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+ async findOneUser(id: string): Promise<User> {
+  const foundUser = await this.userModel.findById(id)  
+  return foundUser;
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
