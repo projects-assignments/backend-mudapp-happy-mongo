@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { Model } from 'mongoose';
+import { Model, ObjectId } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { User } from './schemas/user.schema';
 
@@ -9,7 +9,7 @@ import { User } from './schemas/user.schema';
 export class UserService {
   constructor (@InjectModel('User') private readonly userModel: Model<User>){} 
 
- async createUser(createUserDto: CreateUserDto):Promise <User> {
+ async createUser(createUserDto: CreateUserDto):Promise<User> {
   const userCreated = new this.userModel(createUserDto)  
     return await userCreated.save();
   }
@@ -26,7 +26,8 @@ export class UserService {
     return `This action updates a #${id} user`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  async deleteUser(userId: string):Promise<User> {
+    const deletedUser = await this.userModel.findByIdAndDelete(userId);
+    return deletedUser;
   }
 }
