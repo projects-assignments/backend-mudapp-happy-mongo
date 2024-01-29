@@ -18,26 +18,7 @@ export class UserController {
       message: "The user has been created",
       userCreated
     })
-  }
-  //   @Post('/create')
-  //   async createUser(@Res() res, @Body() createUserDto: CreateUserDto) {
-  //     try {
-  //       const userCreated = await this.userService.createUser(createUserDto);
-  //       console.log(createUserDto); // Asegúrate de que createUserDto esté definido y tenga los datos correctos
-  //       return res.status(HttpStatus.OK).json({
-  //         message: 'The user has been created',
-  //         userCreated,
-  //       });
-  //     } catch (error) {
-  //       console.error('Error creating user:', error);
-  //       return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
-  //         message: 'An error occurred while creating the user',
-  //         error: error.message,
-  //       });
-  //     }
-  //   }
-  // }
-
+  } 
 
   @Get('/')
   findAllUsers(@Res()response) {

@@ -10,8 +10,15 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './user/user.module';
 
 @Module({
-  imports: [ChargeModule, DriverModule, ServiceModule, RatingModule, UserModule, MessagesModule, MongooseModule.forRoot('mongodb+srv://correofrg:felix@book-api.nbz0kit.mongodb.net/')],
+  imports: [
+    ChargeModule, 
+    DriverModule, 
+    ServiceModule, 
+    RatingModule, 
+    UserModule, 
+    MessagesModule, 
+    MongooseModule.forRoot('mongodb+srv://correofrg:felix@book-api.nbz0kit.mongodb.net/mudapp')],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}
