@@ -4,12 +4,12 @@ import { Date, HydratedDocument } from 'mongoose';
 export type ServiceDocument = HydratedDocument<Service>;
 @Schema()
 export class Service {
-  @Prop({ unique: true, required: true })
-  serviceId: string;
-  @Prop({ required: true })
-  userId: string;
-  @Prop({ required: true })
-  driverId: string;
+  // @Prop({ unique: true, required: true })
+  // serviceId: string;
+  @Prop({ type: {} })
+  userid: string;
+  @Prop({ type: {} })
+  driverid: string;
   @Prop({ required: true })
   priceService: number;
   @Prop({ required: true })
@@ -20,17 +20,17 @@ export class Service {
   date: Date;
   @Prop({ required: true })
   passengers: number;
-  @Prop()
+  @Prop({ type: {} })
   extraServices: {
     assistant: number;
     wheelbarrow: number;
   };
-  @Prop({ default: false })
+  @Prop({ type: {}, default: false })
   paymentStatus: {
     standBy: boolean;
     cancelled: boolean;
   };
-  @Prop({ default: false, required: true })
+  @Prop({ type: {}, default: false, required: true })
   statusServie: {
     confirmed: boolean;
     inProgress: boolean;

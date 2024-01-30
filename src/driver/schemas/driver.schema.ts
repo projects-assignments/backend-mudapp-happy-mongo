@@ -4,8 +4,8 @@ import mongoose, { HydratedDocument } from 'mongoose';
 export type DriverDocument = HydratedDocument<Driver>;
 @Schema()
 export class Driver {
-  @Prop({ unique: true, required: true })
-  driverId: string;
+  // @Prop({ type: 'objetcid', refer: 'user' })
+  // driverId: string;
   @Prop({ required: true })
   driverName: string;
   @Prop({ required: true })
