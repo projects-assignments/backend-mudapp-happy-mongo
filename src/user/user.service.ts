@@ -7,7 +7,7 @@ import { User } from './schemas/user.schema';
 
 @Injectable()
 export class UserService {
-  constructor(@InjectModel('User') private readonly userModel: Model<User>) {}
+  constructor(@InjectModel('User') private readonly userModel: Model<User>) { }
 
   async createUser(createUserDto: CreateUserDto): Promise<User> {
     const userCreated = new this.userModel(createUserDto);
@@ -19,8 +19,8 @@ export class UserService {
     console.log(allUsers);
     return allUsers;
   }
-//modificar nuestro authservice
-  async findOneByUserEmail(userEmail)
+  //modificar nuestro authservice
+  // async findOneByUserEmail(userEmail)
 
   async findOneUser(id: string): Promise<User> {
     const findUser = await this.userModel.findById(id);
