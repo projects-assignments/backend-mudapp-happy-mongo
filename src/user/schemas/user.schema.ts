@@ -5,8 +5,8 @@ import { Document } from 'mongoose';
 export type UserDocument = HydratedDocument<User>;
 @Schema()
 export class User extends Document {
-    // @Prop({ unique: true, default: Date.now })
-    // userId: string;
+    @Prop({ unique: true, default: Date.now })
+    userId: string;
     @Prop({ type: {}, default: false, required: true })
     role: {
         admin: boolean,
@@ -30,6 +30,5 @@ export class User extends Document {
     @Prop({ required: true })
     userPassword: string;
 }
-
 
 export const UserSchema = SchemaFactory.createForClass(User);
