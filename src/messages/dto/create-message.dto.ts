@@ -1,3 +1,3 @@
 export class CreateMessageDto {
-    message: { message: string }
+  message: { message: string };
 }

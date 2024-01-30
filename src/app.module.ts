@@ -12,13 +12,17 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
-    ChargeModule, 
-    DriverModule, 
-    ServiceModule, 
-    RatingModule, 
-    UserModule, 
-    MessagesModule, 
-    MongooseModule.forRoot('mongodb+srv://correofrg:felix@book-api.nbz0kit.mongodb.net/mudapp'), AuthModule],
+    ChargeModule,
+    DriverModule,
+    ServiceModule,
+    RatingModule,
+    UserModule,
+    MessagesModule,
+    MongooseModule.forRoot(
+      'mongodb+srv://correofrg:felix@book-api.nbz0kit.mongodb.net/mudapp',
+    ),
+    AuthModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

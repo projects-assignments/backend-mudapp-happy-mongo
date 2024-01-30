@@ -1,6 +1,6 @@
 export class CreateRatingDto {
-    rating: {
-        rate: number,
-        message: string
-    }
+  rating: {
+    rate: number;
+    message: string;
+  };
 }
