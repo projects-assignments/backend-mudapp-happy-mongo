@@ -1,0 +1,20 @@
+{
+    "priceService": 234,
+    "pickupAddress": "string",
+    "deliveryAddress": "string",
+    "passengers": 3,
+    "extraServices": {
+        "assistant": 3,
+        "wheelbarrow": 1
+    },
+    "paymentStatus": {
+        "standBy": false,
+        "cancelled": false
+    },
+    "statusServie": {
+        "confirmed": false,
+        "inProgress": false,
+        "cancelled": false,
+        "finalized": false
+    }
+}

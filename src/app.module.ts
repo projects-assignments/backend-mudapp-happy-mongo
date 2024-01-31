@@ -8,7 +8,7 @@ import { RatingModule } from './rating/rating.module';
 import { MessagesModule } from './messages/messages.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './user/user.module';
-import { AuthModule } from './auth/auth.module';
+// import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -21,9 +21,9 @@ import { AuthModule } from './auth/auth.module';
     MongooseModule.forRoot(
       'mongodb+srv://correofrg:felix@book-api.nbz0kit.mongodb.net/mudapp',
     ),
-    AuthModule,
+    // AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
