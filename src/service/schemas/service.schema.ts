@@ -1,13 +1,14 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Date, HydratedDocument } from 'mongoose';
+import mongoose, { Date, HydratedDocument } from 'mongoose';
+import { User } from 'src/user/schemas/user.schema';
 
 export type ServiceDocument = HydratedDocument<Service>;
 @Schema()
 export class Service {
   // @Prop({ unique: true, required: true })
   // serviceId: string;
-  @Prop({ type: {} })
-  userid: string;
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref:'User' })
+  userid: User;
   @Prop({ type: {} })
   driverid: string;
   @Prop({ required: true })

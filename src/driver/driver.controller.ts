@@ -10,7 +10,7 @@ import {
 import { DriverService } from './driver.service';
 import { CreateDriverDto } from './dto/create-driver.dto';
 import { UpdateDriverDto } from './dto/update-driver.dto';
-// import { Driver } from './schemas/driver.schema'; // He importado el Driver
+
 
 @Controller('driver')
 export class DriverController {
@@ -43,12 +43,5 @@ export class DriverController {
 }
 
 
-
-
-  // @Put(':id/available')
-  // async findOne(@Param('id') id: string, @Body('available') available: boolean): Promise<Driver> {
-  //   return this.driverService.updateAvailable(id, available);
-  // }
-  // He intentado buscar la disponiblidad de un driver, para mediante una busqueda, ver la disponibilidad //
 
 
