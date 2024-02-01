@@ -25,7 +25,7 @@ export class AuthService {
     const { userPassword, ...result } = user;
     return result;
   }
-  signin(user: any) {
+  signin(user: User) {
     const payload = { userEmail: user.userEmail, sub: user._id };
     return this.jwtService.sign(payload);
   }
