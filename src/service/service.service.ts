@@ -14,23 +14,38 @@ export class ServiceService {
     return await serviceCreated.save();
   }
 
-  create(createServiceDto: CreateServiceDto) {
-    return 'This action adds a new service';
+  async findAllServices(): Promise<Service[]> {
+    const allServices = await this.serviceModel.find();
+    console.log(allServices);
+    return allServices;
+  }
+ 
+  async findOneService(id: number): Promise<Service> {
+    const findService = await this.serviceModel.findById(id);
+    return findService;
+  }
+  async updatePartiallyService(
+    id: string,
+    updatedServiceDto: UpdateServiceDto,
+  ): Promise<Service> {
+    const updatedPartiallyService = await this.serviceModel.findByIdAndUpdate(
+      id,
+      updatedServiceDto,
+    );
+    return updatedPartiallyService;
   }
 
-  findAll() {
-    return `This action returns all service`;
+  async updateService(id: string, createServiceDto: CreateServiceDto): Promise<Service> {
+    const updatedService = await this.serviceModel.findByIdAndUpdate(
+      id,
+      createServiceDto,
+    );
+    return updatedService;
   }
-
-  findOne(id: number) {
-    return `This action returns a #${id} service`;
-  }
-
-  update(id: number, updateServiceDto: UpdateServiceDto) {
-    return `This action updates a #${id} service`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} service`;
+ 
+  async deleteService(id: string): Promise<Service> {
+    const deletedService = await this.serviceModel.findByIdAndDelete(id);
+    return deletedService;
   }
 }
+
