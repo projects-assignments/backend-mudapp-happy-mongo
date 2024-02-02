@@ -6,9 +6,9 @@ import { DriverSchema } from './schemas/driver.schema';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: 'driver', schema: DriverSchema }]),
-  ],
+    MongooseModule.forFeature([{ name: 'Driver', schema: DriverSchema }])],
   controllers: [DriverController],
   providers: [DriverService],
+  exports: [DriverService],
 })
 export class DriverModule {}

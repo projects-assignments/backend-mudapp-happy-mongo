@@ -1,11 +1,12 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
+import { User } from 'src/user/schemas/user.schema';
 
 export type DriverDocument = HydratedDocument<Driver>;
 @Schema()
 export class Driver {
-  @Prop({ unique: true, required: true })
-  driverId: string;
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref:'User' })
+  driverId: User;
   @Prop({ required: true })
   driverName: string;
   @Prop({ required: true })

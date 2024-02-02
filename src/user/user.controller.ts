@@ -15,20 +15,34 @@ import {
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { CreateDriverDto } from 'src/driver/dto/create-driver.dto';
+import { DriverService } from 'src/driver/driver.service';
 // import { response } from 'express';
 // import { log } from 'console';
 
 @Controller('user')
 export class UserController {
-  constructor(private readonly userService: UserService) { }
+  constructor(private readonly userService: UserService, private readonly driverService: DriverService) { }
+
+  // @Post('/create')
+  // async createUser(@Res() response, @Body() createUserDto: CreateUserDto) {
+  //   const userCreated = await this.userService.createUser(createUserDto);
+  //   console.log(createUserDto);
+  //   return response.status(HttpStatus.OK).json({
+  //     message: 'The user has been created',
+  //     userCreated,
+  //   });
+  // }
 
   @Post('/create')
-  async createUser(@Res() response, @Body() createUserDto: CreateUserDto) {
+  async createUser(@Res() response, @Body() createUserDto: CreateUserDto, @Body() createDriverDto: CreateDriverDto) {
     const userCreated = await this.userService.createUser(createUserDto);
-    console.log(createUserDto);
+    const driverCreated = await this.driverService.createDriver(createDriverDto);
     return response.status(HttpStatus.OK).json({
       message: 'The user has been created',
       userCreated,
+      message1: 'The driver has been created',
+      driverCreated
     });
   }
 
