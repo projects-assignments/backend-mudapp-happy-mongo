@@ -7,11 +7,11 @@ export type DriverDocument = HydratedDocument<Driver>;
 export class Driver {
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref:'User' })
   driverId: User;
-  @Prop({ required: true })
+  @Prop()
   driverName: string;
-  @Prop({ required: true })
+  @Prop()
   driverLastName: string;
-  @Prop({ required: true })
+  @Prop()
   driverEmail: string;
   @Prop()
   driverAvailable: boolean;
@@ -21,16 +21,11 @@ export class Driver {
     { van: boolean; capacity: string },
     { car: boolean; capacity: string },
   ];
-  @Prop()
-  zones: [Barcelona: boolean];
-  @Prop()
-  fees: [
-    truck: boolean,
-    van: boolean,
-    car: boolean,
-    xtras: { assistant: number; wheelbarrow: number },
-  ];
-  @Prop({ type: String })
+  @Prop({ type: Object })
+  zones: {Barcelona: boolean};
+  @Prop({ type: Object })
+  xtras: { assistant: number; wheelbarrow: number };
+  @Prop({ type: Object })
   collectMethods: { cardHolder: string; iban: string };
   @Prop()
   averageRating: number;

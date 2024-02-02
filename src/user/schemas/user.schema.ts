@@ -5,7 +5,7 @@ import { Document } from 'mongoose';
 export type UserDocument = HydratedDocument<User>;
 @Schema()
 export class User extends Document {
-  @Prop({ type: {}, default: false, required: true })
+  @Prop({ type: Object, default: false })
   role: {
     admin: boolean;
     user: boolean;
@@ -15,22 +15,22 @@ export class User extends Document {
   // role: {
   //     driver: boolean
   // }
-  @Prop({ required: true })
+  @Prop()
   userName: string;
-  @Prop({ required: true })
+  @Prop()
   userLastName: string;
-  @Prop({ type: {}, required: true })
+  @Prop({type: Object})
   address: {
     street: string;
     streetNumber: number;
     city: string;
     postalCode: number;
   };
-  @Prop({ required: true })
+  @Prop()
   userEmail: string;
   @Prop()
   dni: string;
-  @Prop({ required: true })
+  @Prop()
   userPassword: string;
 }
 
