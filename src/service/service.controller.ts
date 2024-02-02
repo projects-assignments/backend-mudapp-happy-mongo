@@ -41,36 +41,36 @@ export class ServiceController {
       serviceCreated,
     });
   }
-}
 
-@Get('/')
-async findAllServices(@Res() res) {
-  const allServices = await  this.serviceService.findAllServices();
-  res.status(HttpStatus.OK).json({
-    message: 'Service found complete',
-    allServices,
-  });
-}
 
-@Get(':id')
-async findOneService(@Res() res, @Param('id') id: string) {
-  const findOneService = await this.serviceService.findOneService(+id);
-  console.log(findOneService)
-  res.status(HttpStatus.OK).json({
-    message: 'The service has been found',
-    findOneService
-  });
-}
+  @Get('/')
+  async findAllServices(@Res() res) {
+    const allServices = await this.serviceService.findAllServices();
+    res.status(HttpStatus.OK).json({
+      message: 'Service found complete',
+      allServices,
+    });
+  }
 
-@Patch(':id')
-async updatePartiallyService(@Res() res, @Param('id') id: string, @Body() updateServiceDto: UpdateServiceDto) {
-  const PartiallyService = this.serviceService.updatePartiallyService(id, updateServiceDto);
-  res.status(HttpStatus.OK).json({
-    Message: 'The service has been update succesfully',
-    PartiallyService
-  })
-}
-@Put('/update')
+  @Get(':id')
+  async findOneService(@Res() res, @Param('id') id: string) {
+    const findOneService = await this.serviceService.findOneService(+id);
+    console.log(findOneService)
+    res.status(HttpStatus.OK).json({
+      message: 'The service has been found',
+      findOneService
+    });
+  }
+
+  @Patch(':id')
+  async updatePartiallyService(@Res() res, @Param('id') id: string, @Body() updateServiceDto: UpdateServiceDto) {
+    const PartiallyService = this.serviceService.updatePartiallyService(id, updateServiceDto);
+    res.status(HttpStatus.OK).json({
+      Message: 'The service has been update succesfully',
+      PartiallyService
+    })
+  }
+  @Put('/update')
   async updateService(
     @Res() response,
     @Body() createServiceDto: CreateServiceDto,
