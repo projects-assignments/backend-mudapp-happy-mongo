@@ -32,7 +32,7 @@ export class ServiceController {
   // }
 
 
-  @Post('/create')
+  @Post('')
   async createService(@Res() res, @Body() createServiceDto: CreateServiceDto) {
     const serviceCreated = await this.serviceService.createService(createServiceDto);
     console.log(createServiceDto);
@@ -43,7 +43,7 @@ export class ServiceController {
   }
 
 
-  @Get('/')
+  @Get('')
   async findAllServices(@Res() res) {
     const allServices = await this.serviceService.findAllServices();
     res.status(HttpStatus.OK).json({

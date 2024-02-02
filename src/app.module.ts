@@ -19,7 +19,7 @@ import { UserModule } from './user/user.module';
     UserModule,
     // MessagesModule,
     MongooseModule.forRoot(
-      'mongodb+srv://correofrg:felix@book-api.nbz0kit.mongodb.net/mudapp1',
+      'mongodb+srv://correofrg:felix@book-api.nbz0kit.mongodb.net/mudapp3',
     ),
     // AuthModule,
   ],
