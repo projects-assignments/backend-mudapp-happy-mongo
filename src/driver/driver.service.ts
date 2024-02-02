@@ -13,16 +13,19 @@ export class DriverService {
     const driverCreated = new this.driverModel(createDriverDto);
     return await driverCreated.save();
   }
-  create(createDriverDto: CreateDriverDto) {
-    return 'This action adds a new driver';
+  // create(createDriverDto: CreateDriverDto) {
+  //   return 'This action adds a new driver';
+  // }
+
+  async findAllDriver(): Promise<Driver[]> {
+    const allDriver = await this.driverModel.find();
+    console.log(allDriver);
+    return allDriver;
   }
 
-  findAll() {
-    return `This action returns all driver`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} driver`;
+  async findOneDriver(id: string): Promise<Driver> {
+    const findOneDriver = await this.driverModel.findById(id);
+    return findOneDriver
   }
 
   update(id: number, updateDriverDto: UpdateDriverDto) {

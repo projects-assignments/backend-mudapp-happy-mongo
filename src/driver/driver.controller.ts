@@ -8,6 +8,7 @@ import {
   Delete,
   Res,
   HttpStatus,
+  NotFoundException,
 } from '@nestjs/common';
 import { DriverService } from './driver.service';
 import { CreateDriverDto } from './dto/create-driver.dto';
@@ -28,14 +29,23 @@ export class DriverController {
     });
   }
 
-  @Get()
-  findAll() {
-    return this.driverService.findAll();
+  @Get('')
+  findAllService(@Res() response) {
+    const AllDriver = this.driverService.findAllDriver();
+    response.status(HttpStatus.OK).json({
+      message: 'the drivers are:',
+      AllDriver
+    })
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.driverService.findOne(+id);
+  async findOneDriver(@Res() response, @Param('id') id: string) {
+    const findOneDriver = await this.driverService.findOneDriver(id);
+    if (!findOneDriver) throw new NotFoundException('Driver does not exist')
+    response.status(HttpStatus.OK).json({
+      message: "your driver is:",
+      findOneDriver
+    })
   }
 
   @Patch(':id')

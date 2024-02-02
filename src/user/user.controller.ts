@@ -32,10 +32,10 @@ export class UserController {
   //     message: 'The user has been created',
   //     userCreated,
   //   });
-//   // }
+  //   // }
 
 
-// en realidad tendrian que crearse los dos metodos
+  // en realidad tendrian que crearse los dos metodos
   @Post('/create')
   async createUser(@Res() response, @Body() createUserDto: CreateUserDto, @Body() createDriverDto: CreateDriverDto) {
     const userCreated = await this.userService.createUser(createUserDto);
@@ -48,12 +48,13 @@ export class UserController {
     });
   }
 
-  @Get('/')
+  @Get('')
   findAllUsers(@Res() response) {
     const allUsers = this.userService.findAll();
     response.status(HttpStatus.OK).json({
-      allUsers,
-    });
+      message: 'The users create:',
+      allUsers
+    })
   }
 
   @Get(':id')
