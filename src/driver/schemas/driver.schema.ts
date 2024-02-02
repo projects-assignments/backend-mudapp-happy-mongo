@@ -5,8 +5,10 @@ import { User } from 'src/user/schemas/user.schema';
 export type DriverDocument = HydratedDocument<Driver>;
 @Schema()
 export class Driver {
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref:'User' })
-  driverId: User;
+  // @Prop({ type: mongoose.Schema.Types.ObjectId, ref:'User' })
+  // driverId: User;
+  @Prop()
+  driverId: string
   @Prop()
   driverName: string;
   @Prop()
@@ -22,7 +24,7 @@ export class Driver {
     { car: boolean; capacity: string },
   ];
   @Prop({ type: Object })
-  zones: {Barcelona: boolean};
+  zones: { Barcelona: boolean };
   @Prop({ type: Object })
   xtras: { assistant: number; wheelbarrow: number };
   @Prop({ type: Object })

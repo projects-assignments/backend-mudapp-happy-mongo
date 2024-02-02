@@ -1,0 +1,32 @@
+{
+    "driverId": "string",
+    "driverName": "string",
+    "driverLastName": "string",
+    "driverEmail": "string",
+    "driverAvailable": true,
+    "vehicle": [
+        {
+            "truck": true,
+            "capacity": "string"
+        },
+        {
+            "van": false,
+            "capacity": "string"
+        },
+        {
+            "car": false,
+            "capacity": "string"
+        }
+    ],
+    "zones": {
+        "Barcelona": true
+    },
+    "xtras": {
+        "assistant": 1,
+        "wheelbarrow": 2
+    },
+    "collectMethods": {
+        "cardHolder": "string",
+        "iban": "string"
+    }
+}

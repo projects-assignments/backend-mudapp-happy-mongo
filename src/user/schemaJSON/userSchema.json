@@ -1,4 +1,5 @@
 {
+    "userId": "dni12345",
     "role": {
         "admin": true,
         "user": false,
@@ -13,6 +14,5 @@
         "postalCode": 1516161
     },
     "userEmail": "string",
-    "dni": "string",
     "userPassword": "1234"
 }

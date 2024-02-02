@@ -1,4 +1,5 @@
 export class CreateDriverDto {
+  driverId: string;
   driverName: string;
   driverLastName: string;
   driverEmail: string;
@@ -8,7 +9,8 @@ export class CreateDriverDto {
     { van: boolean; capacity: string },
     { car: boolean; capacity: string },
   ];
-  zones: {Barcelona: boolean};
+  zones: { Barcelona: boolean };
   xtras: { assistant: number; wheelbarrow: number };
   collectMethods: { cardHolder: string; iban: string };
+  averageRating: number;
 }

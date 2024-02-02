@@ -1,4 +1,5 @@
 export class CreateUserDto {
+  userId: string;
   role: {
     admin: boolean;
     user: boolean;
@@ -13,6 +14,5 @@ export class CreateUserDto {
     postalCode: number;
   };
   userEmail: string;
-  dni: string;
   userPassword: string;
 }
