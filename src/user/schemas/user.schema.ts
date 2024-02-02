@@ -6,7 +6,7 @@ export type UserDocument = HydratedDocument<User>;
 @Schema()
 export class User extends Document {
   @Prop()
-  userId: string;
+  id: string;
   @Prop({ type: Object, default: false })
   role: {
     admin: boolean;
@@ -18,9 +18,9 @@ export class User extends Document {
   //     driver: boolean
   // }
   @Prop()
-  userName: string;
+  name: string;
   @Prop()
-  userLastName: string;
+  lastName: string;
   @Prop({ type: Object })
   address: {
     street: string;
@@ -29,9 +29,9 @@ export class User extends Document {
     postalCode: number;
   };
   @Prop({ unique: false })
-  userEmail: string;
+  email: string;
   @Prop()
-  userPassword: string;
+  Password: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

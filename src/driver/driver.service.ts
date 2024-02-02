@@ -28,11 +28,16 @@ export class DriverService {
     return findOneDriver
   }
 
-  update(id: number, updateDriverDto: UpdateDriverDto) {
-    return `This action updates a #${id} driver`;
+  async updateDriver(
+    id: string,
+    updateDriverDto: UpdateDriverDto):
+    Promise<Driver> {
+    const updateDriver = await this.driverModel.findByIdAndUpdate(id, updateDriverDto);
+    return updateDriver
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} driver`;
+  async deleteDriver(id: string): Promise<Driver> {
+    const deletedDriver = await this.driverModel.findByIdAndDelete(id);
+    return deletedDriver;
   }
 }

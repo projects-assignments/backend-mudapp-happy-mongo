@@ -52,9 +52,9 @@ export class ServiceController {
     });
   }
 
-  @Get(':id')
-  async findOneService(@Res() res, @Param('id') id: string) {
-    const findOneService = await this.serviceService.findOneService(+id);
+  @Get(':email')
+  async findOneService(@Res() res, @Param('email') email: string) {
+    const findOneService = await this.serviceService.findOneService(email);
     console.log(findOneService)
     res.status(HttpStatus.OK).json({
       message: 'The service has been found',

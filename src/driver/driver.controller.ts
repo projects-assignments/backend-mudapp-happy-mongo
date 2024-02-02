@@ -49,13 +49,28 @@ export class DriverController {
   }
 
   @Patch(':id')
+  async updateDriver(@Res() response, @Param('id') id: string, @Body() updateDriverDto: UpdateDriverDto) {
+    const updateDriver = await this.driverService.updateDriver(id, updateDriverDto);
+    const findOneDriver = await this.driverService.findOneDriver(id);
+    return response.status(HttpStatus.OK).json({
+      message1: "lo que quieres cambiar en el driver es esto:",
+      updateDriverDto,
+      message2: "el album a actualizar es:",
+      updateDriver,
+      message3: "el album actualizado queda así:",
+      findOneDriver,
+    })
+  }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.driverService.remove(+id);
+  async deleteDriver(@Res() res, @Param('id') id: string) {
+    const driverDeleted = await this.driverService.deleteDriver(id);
+    console.log(id);
+    if (!driverDeleted) throw new NotFoundException('The driver does not exist');
+    return res.status(HttpStatus.OK).json({
+      message: 'The driver has been deleted succesfully',
+      driverDeleted,
+    });
   }
+
 }
-
-
-
-

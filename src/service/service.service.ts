@@ -19,9 +19,9 @@ export class ServiceService {
     console.log(allServices);
     return allServices;
   }
- 
-  async findOneService(id: number): Promise<Service> {
-    const findService = await this.serviceModel.findById(id);
+
+  async findOneService(email: string): Promise<Service> {
+    const findService = await this.serviceModel.findById(email);
     return findService;
   }
   async updatePartiallyService(
@@ -42,7 +42,7 @@ export class ServiceService {
     );
     return updatedService;
   }
- 
+
   async deleteService(id: string): Promise<Service> {
     const deletedService = await this.serviceModel.findByIdAndDelete(id);
     return deletedService;

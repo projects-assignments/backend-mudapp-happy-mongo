@@ -7,8 +7,9 @@ export type ServiceDocument = HydratedDocument<Service>;
 export class Service {
   // @Prop({ unique: true, required: true })
   // serviceId: string;
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref:'User' })
-  userid: User;
+  // @Prop({ type: mongoose.Schema.Types.ObjectId, ref:'User' })
+  // userid: User;
+
   @Prop({ type: {} })
   driverid: string;
   @Prop({ required: true })
@@ -38,6 +39,8 @@ export class Service {
     cancelled: boolean;
     finalized: boolean;
   };
+  @Prop()
+  email: string;
 }
 
 export const ServiceSchema = SchemaFactory.createForClass(Service);
