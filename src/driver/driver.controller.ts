@@ -20,7 +20,7 @@ export class DriverController {
   constructor(private readonly driverService: DriverService) { }
 
 
-  @Post('/create')
+  @Post('')
   async createUser(@Res() response, @Body() createUserDto: CreateDriverDto, @Body() createDriverDto: CreateDriverDto) {
     const driverCreated = await this.driverService.createDriver(createDriverDto);
     return response.status(HttpStatus.OK).json({
@@ -73,7 +73,3 @@ export class DriverController {
   }
   
 }
-
-
-
-

@@ -32,7 +32,7 @@ export class ServiceController {
   // }
 
 
-  @Post('/create')
+  @Post('')
   async createService(@Res() res, @Body() createServiceDto: CreateServiceDto) {
     const serviceCreated = await this.serviceService.createService(createServiceDto);
     console.log(createServiceDto);
@@ -43,7 +43,7 @@ export class ServiceController {
   }
 
 
-  @Get('/')
+  @Get('')
   async findAllServices(@Res() res) {
     const allServices = await this.serviceService.findAllServices();
     res.status(HttpStatus.OK).json({
@@ -52,9 +52,9 @@ export class ServiceController {
     });
   }
 
-  @Get(':id')
-  async findOneService(@Res() res, @Param('id') id: string) {
-    const findOneService = await this.serviceService.findOneService(+id);
+  @Get(':email')
+  async findOneService(@Res() res, @Param('email') email: string) {
+    const findOneService = await this.serviceService.findOneService(email);
     console.log(findOneService)
     res.status(HttpStatus.OK).json({
       message: 'The service has been found',

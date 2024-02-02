@@ -36,15 +36,16 @@ export class UserController {
 
 
   // en realidad tendrian que crearse los dos metodos
-  @Post('/create')
+  @Post('')
   async createUser(@Res() response, @Body() createUserDto: CreateUserDto, @Body() createDriverDto: CreateDriverDto) {
     const userCreated = await this.userService.createUser(createUserDto);
-    // const driverCreated = await this.driverService.createDriver(createDriverDto);
+    const driverCreated = await this.driverService.createDriver(createDriverDto);
+    console.log(driverCreated);
     return response.status(HttpStatus.OK).json({
       message: 'The user has been created',
       userCreated,
-      // message1: 'The driver has been created',
-      // driverCreated
+      message1: 'The driver has been created',
+      driverCreated
     });
   }
 

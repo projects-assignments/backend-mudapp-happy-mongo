@@ -8,13 +8,13 @@ export class Driver {
   // @Prop({ type: mongoose.Schema.Types.ObjectId, ref:'User' })
   // driverId: User;
   @Prop()
-  driverId: string
+  id: string
   @Prop()
-  driverName: string;
+  name: string;
   @Prop()
-  driverLastName: string;
+  lastName: string;
   @Prop()
-  driverEmail: string;
+  email: string;
   @Prop()
   driverAvailable: boolean;
   @Prop()

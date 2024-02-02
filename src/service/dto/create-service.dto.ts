@@ -17,4 +17,5 @@ export class CreateServiceDto {
     cancelled: boolean;
     finalized: boolean;
   };
+  email: string
 }

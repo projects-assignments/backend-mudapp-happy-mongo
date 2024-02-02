@@ -40,5 +40,7 @@ export class DriverService {
     const deletedDriver = await this.driverModel.findByIdAndDelete(id);
     return deletedDriver;
   }
-}
 
+
+
+}
