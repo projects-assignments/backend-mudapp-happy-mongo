@@ -1,5 +1,5 @@
 import { Controller, Post, Req, UseGuards } from '@nestjs/common';
-import { AuthService } from '../src/auth/auth.service';
+import { AuthService } from 'src/auth/auth.service';
 import { AuthGuard } from '@nestjs/passport';
 // import { Types } from 'mongoose';
 // import { Request } from 'express';
