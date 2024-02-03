@@ -9,6 +9,7 @@ import { User } from './schemas/user.schema';
 export class UserService {
   constructor(@InjectModel('User') private readonly userModel: Model<User>) { }
 
+
   async createUser(createUserDto: CreateUserDto): Promise<User> {
     const userCreated = new this.userModel(createUserDto);
     return await userCreated.save();
