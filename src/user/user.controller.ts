@@ -11,14 +11,20 @@ import {
   Query,
   NotFoundException,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { CreateDriverDto } from 'src/driver/dto/create-driver.dto';
-import { DriverService } from 'src/driver/driver.service';
+import { CreateDriverDto } from '../driver/dto/create-driver.dto';
+import { DriverService } from '../driver/driver.service';
+import { Roles } from '../auth/decorators/roles.decorator';
+import { Role } from '../auth/constants/role.enum';
 // import { response } from 'express';
-// import { log } from 'console';
+import { RolesGuard } from 'src/auth/guards/roles.guard';
+import { AuthGuard } from '@nestjs/passport';
+
+
 
 @Controller('user')
 export class UserController {
@@ -50,10 +56,13 @@ export class UserController {
   }
 
   @Get('')
+  @Roles(Role.Admin)
+  @UseGuards(AuthGuard('jwt'))
+  @UseGuards(RolesGuard)
   findAllUsers(@Res() response) {
     const allUsers = this.userService.findAll();
     response.status(HttpStatus.OK).json({
-      message: 'The users create:',
+      message: 'The users are found:',
       allUsers
     })
   }

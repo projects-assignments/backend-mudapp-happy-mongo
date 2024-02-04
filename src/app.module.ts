@@ -9,14 +9,14 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
+    MongooseModule.forRoot(
+      'mongodb+srv://correofrg:felix@book-api.nbz0kit.mongodb.net/mudapp3',
+    ),
     
     DriverModule,
     ServiceModule,
     UserModule,
     AuthModule,
-    MongooseModule.forRoot(
-      'mongodb+srv://correofrg:felix@book-api.nbz0kit.mongodb.net/mudapp3',
-    ),
   ],
   controllers: [AppController],
   providers: [AppService],

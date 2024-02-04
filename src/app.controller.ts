@@ -7,12 +7,12 @@ import { User } from './user/schemas/user.schema';
 
 @Controller()
 export class AppController {
-  constructor(private readonly authService: AuthService) { }
+  constructor(private authService: AuthService) { }
 
   @UseGuards(AuthGuard('local'))
   @Post('auth/signin')
   signin(@Req() req: any) {
   // console.log(req.user)
-    return req.user;
+    return this.authService.signin(req.user);
   }
 }

@@ -28,7 +28,7 @@ export class UserService {
     return findUser;
   }
   //requerido para autenticar
-  async findOneByUseremail(email:string): Promise<User>{
+  async findOneByUserEmail(email:string): Promise<User>{
     const findUserByEmail = await this.userModel.findOne({ email }).lean().exec();
     return findUserByEmail;
   }
