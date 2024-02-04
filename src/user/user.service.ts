@@ -27,6 +27,11 @@ export class UserService {
     const findUser = await this.userModel.findById(id);
     return findUser;
   }
+  //requerido para autenticar
+  async findOneByUseremail(email:string): Promise<User>{
+    const findUserByEmail = await this.userModel.findOne({ email }).lean().exec();
+    return findUserByEmail;
+  }
 
   async updatePartiallyUser(
     id: string,

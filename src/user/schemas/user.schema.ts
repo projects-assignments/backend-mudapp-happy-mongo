@@ -1,10 +1,12 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { hash } from 'bcrypt';
 import mongoose, { Date, HydratedDocument } from 'mongoose';
 import { Document } from 'mongoose';
 
 export type UserDocument = HydratedDocument<User>;
 @Schema()
 export class User extends Document {
+  
   @Prop()
   id: string;
   @Prop({ type: Object, default: false })
@@ -13,10 +15,6 @@ export class User extends Document {
     user: boolean;
     driver: boolean;
   };
-  // @Prop({ required: true })  posible solución mas minimalista
-  // role: {
-  //     driver: boolean
-  // }
   @Prop()
   name: string;
   @Prop()
@@ -31,7 +29,19 @@ export class User extends Document {
   @Prop({ unique: false })
   email: string;
   @Prop()
-  Password: string;
+  password: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
+
+UserSchema.pre('save', async function(next){
+  try { if(!this.isModified('password')){
+    return next();
+  }
+  const hashed = await hash(this.password, 10);
+  this.password = hashed;
+  return next();
+}catch(error){
+  return next(error)
+}
+});
