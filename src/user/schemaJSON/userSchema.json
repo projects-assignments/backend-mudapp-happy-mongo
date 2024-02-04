@@ -1,0 +1,18 @@
+{
+    "userId": "dni12345",
+    "role": {
+        "admin": true,
+        "user": false,
+        "driver": false
+    },
+    "userName": "Funciona",
+    "userLastName": "lomismo",
+    "address": {
+        "street": "string",
+        "streetNumber": 54448848,
+        "city": "string",
+        "postalCode": 1516161
+    },
+    "userEmail": "string",
+    "Password": "1234"
+}

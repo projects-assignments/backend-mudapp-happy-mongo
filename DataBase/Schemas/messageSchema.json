@@ -1,0 +1,43 @@
+[
+    // esta primera linea es para crear ld DB en jsongenerator
+    //   '{
+    //         {repeat(5,
+    //             7)
+    //         }
+    //     }',
+    {
+    message_id: '{
+            {objectId()
+            }
+        }',
+    client_id: '{
+            {objectId()
+            }
+        }',
+	driver_id: '{
+            {objectId()
+            }
+        }',
+    service_id: '{
+            {objectId()
+            }
+        }',
+    date:'{
+            {date(new Date(2014,
+                0,
+                1), new Date(),
+                "YYYY-MM-dd")
+            }
+        }',
+    message_client:'{
+            {lorem(5,
+                "words")
+            }
+        }',
+    message_driver:'{
+            {lorem(5,
+                "words")
+            }
+        }'
+    }
+]

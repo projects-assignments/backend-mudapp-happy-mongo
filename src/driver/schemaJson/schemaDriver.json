@@ -1,0 +1,44 @@
+{
+    "id": "string",
+    "name": "string",
+    "lastName": "string",
+    "email": "string",
+    "driverAvailable": true,
+    "vehicle": [
+        {
+            "truck": true,
+            "capacity": "string"
+        },
+        {
+            "van": false,
+            "capacity": "string"
+        },
+        {
+            "car": false,
+            "capacity": "string"
+        }
+    ],
+    "zones": {
+        "Barcelona": true
+    },
+    "xtras": {
+        "assistant": 1,
+        "wheelbarrow": 2
+    },
+    "collectMethods": {
+        "cardHolder": "string",
+        "iban": "string"
+    },
+    "role": {
+        "admin": true,
+        "user": false,
+        "driver": false
+    },
+    "address": {
+        "street": "string",
+        "streetNumber": 54448848,
+        "city": "string",
+        "postalCode": 1516161
+    },
+    "Password": "1234"
+}
