@@ -23,9 +23,10 @@ import { Role } from '../auth/constants/role.enum';
 // import { response } from 'express';
 import { RolesGuard } from 'src/auth/guards/roles.guard';
 import { AuthGuard } from '@nestjs/passport';
+import { ApiTags } from '@nestjs/swagger';
 
 
-
+@ApiTags('user')
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService, private readonly driverService: DriverService) { }

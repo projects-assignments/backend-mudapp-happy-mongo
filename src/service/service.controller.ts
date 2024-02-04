@@ -15,7 +15,10 @@ import {
 import { ServiceService } from './service.service';
 import { CreateServiceDto } from './dto/create-service.dto';
 import { UpdateServiceDto } from './dto/update-service.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+
+@ApiTags('service')
 @Controller('service')
 export class ServiceController {
 
