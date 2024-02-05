@@ -20,7 +20,7 @@ import { CreateDriverDto } from '../driver/dto/create-driver.dto';
 import { DriverService } from '../driver/driver.service';
 import { Roles } from '../auth/decorators/roles.decorator';
 import { Role } from '../auth/constants/role.enum';
-// import { response } from 'express';
+import { response } from 'express';
 import { RolesGuard } from 'src/auth/guards/roles.guard';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiTags } from '@nestjs/swagger';
@@ -30,17 +30,6 @@ import { ApiTags } from '@nestjs/swagger';
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService, private readonly driverService: DriverService) { }
-
-  // @Post('/create')
-  // async createUser(@Res() response, @Body() createUserDto: CreateUserDto) {
-  //   const userCreated = await this.userService.createUser(createUserDto);
-  //   console.log(createUserDto);
-  //   return response.status(HttpStatus.OK).json({
-  //     message: 'The user has been created',
-  //     userCreated,
-  //   });
-  //   // }
-
 
   // en realidad tendrian que crearse los dos metodos
   @Post('')
@@ -57,9 +46,9 @@ export class UserController {
   }
 
   @Get('')
-  @Roles(Role.Admin)
-  @UseGuards(AuthGuard('jwt'))
-  @UseGuards(RolesGuard)
+  // @Roles(Role.Admin)
+  // @UseGuards(AuthGuard('jwt'))
+  // @UseGuards(RolesGuard)
   findAllUsers(@Res() response) {
     const allUsers = this.userService.findAll();
     response.status(HttpStatus.OK).json({

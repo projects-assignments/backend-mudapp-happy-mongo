@@ -40,5 +40,5 @@
         "city": "string",
         "postalCode": 1516161
     },
-    "Password": "1234"
+    "password": "1234"
 }

@@ -12,7 +12,7 @@ export class AppController {
   @UseGuards(AuthGuard('local'))
   @Post('auth/signin')
   signin(@Req() req: any) {
-  // console.log(req.user)
+  console.log(req.user)
     return this.authService.signin(req.user);
   }
 }

@@ -1,8 +1,19 @@
 export class SchemaGeneral {
-    driverId: string;
-    driverName: string;
-    driverLastName: string;
-    driverEmail: string;
+    id: string;
+    name: string;
+    lastName: string;
+    role: {
+        admin: boolean;
+        user: boolean;
+        driver: boolean;
+      };
+      address: {
+        street: string;
+        streetNumber: number;
+        city: string;
+        postalCode: number;
+      };
+    email: string;
     driverAvailable: boolean;
     vehicle: [
         { truck: boolean; capacity: string },
@@ -13,4 +24,5 @@ export class SchemaGeneral {
     xtras: { assistant: number; wheelbarrow: number };
     collectMethods: { cardHolder: string; iban: string };
     averageRating: number;
+    password: string;
 }
