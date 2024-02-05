@@ -1,18 +1,18 @@
 {
-    "userId": "dni12345",
+    "id": "dni12345",
     "role": {
-        "admin": true,
-        "user": false,
+        "admin": false,
+        "user": true,
         "driver": false
     },
-    "userName": "Funciona",
-    "userLastName": "lomismo",
+    "name": "Funciona",
+    "lastName": "lomismo",
     "address": {
         "street": "string",
         "streetNumber": 54448848,
         "city": "string",
         "postalCode": 1516161
     },
-    "userEmail": "string",
-    "Password": "1234"
+    "email": "string",
+    "password": "1234"
 }
