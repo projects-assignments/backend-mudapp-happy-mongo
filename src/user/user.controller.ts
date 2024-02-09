@@ -21,7 +21,7 @@ import { DriverService } from '../driver/driver.service';
 import { Roles } from '../auth/decorators/roles.decorator';
 import { Role } from '../auth/constants/role.enum';
 import { response } from 'express';
-import { RolesGuard } from 'src/auth/guards/roles.guard';
+import { RolesGuard } from '../auth/guards/roles.guard';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiTags } from '@nestjs/swagger';
 
@@ -49,12 +49,12 @@ export class UserController {
   // @Roles(Role.Admin)
   // @UseGuards(AuthGuard('jwt'))
   // @UseGuards(RolesGuard)
-  findAllUsers(@Res() response) {
-    const allUsers = this.userService.findAll();
-    response.status(HttpStatus.OK).json({
-      message: 'The users are found:',
-      allUsers
-    })
+  async findAllUsers() {
+    return await this.userService.findAll();
+    // response.status(HttpStatus.OK).json({
+    //   message: 'The users are found:',
+    //   allUsers
+    // })
   }
 
   @Get(':id')

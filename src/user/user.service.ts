@@ -4,9 +4,13 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { Model, ObjectId } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { User } from './schemas/user.schema';
+import { CreateDriverDto } from '../driver/dto/create-driver.dto';
 
 @Injectable()
 export class UserService {
+  static createUser(createUserDto: CreateDriverDto) { }
+  
+  
   constructor(@InjectModel('User') private readonly userModel: Model<User>) { }
 
 

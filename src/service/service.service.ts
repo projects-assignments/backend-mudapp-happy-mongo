@@ -7,7 +7,7 @@ import { Service } from './schemas/service.schema';
 import { UserDocument } from 'src/user/schemas/user.schema';
 // import { UserService } from 'src/user/user.service';
 import { User } from 'src/user/schemas/user.schema';
-import { Driver } from 'src/driver/schemas/driver.schema';
+import { Driver } from '../driver/schemas/driver.schema';
 
 @Injectable()
 export class ServiceService {

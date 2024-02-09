@@ -2,7 +2,7 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { UserService } from 'src/user/user.service';
 import { JwtService } from '@nestjs/jwt'
 import { compare } from 'bcrypt';
-import { User } from 'src/user/schemas/user.schema';
+import { User } from '../user/schemas/user.schema';
 import { Types } from 'mongoose';
 
 

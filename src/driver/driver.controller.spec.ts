@@ -4,12 +4,15 @@ import { DriverService } from './driver.service';
 
 describe('DriverController', () => {
   let controller: DriverController;
-
+  let service: DriverService;
+  const mockDriverService = {};
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [DriverController],
       providers: [DriverService],
-    }).compile();
+    })
+    .overrideProvider(DriverService)
+      .useValue(mockDriverService).compile();
 
     controller = module.get<DriverController>(DriverController);
   });
